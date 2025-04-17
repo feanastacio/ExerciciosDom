@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 01</title>
+    <link rel="stylesheet" href="Exercicio01.css">
+</head>
+<body>
+    <header>
+        <h1>Lista de tarefas</h1>
+    </header>
+    
+    <main>
+        <input type="text" name="" id="tarefa" placeholder="Digite uma tarefa">
+        <button onclick="adicionarTarefas()">Adicionar</button>
+        <!-- <ol> Lista ordenada
+            <li>Primeiro Item</li>
+            <li>Segundo Item</li>
+            <li>Terceiro Item</li>
+        </ol> -->
+        <ul id="lista_de_tarefas"> <!--Lista não ordenada-->
+            <!-- <li>Primeiro Item</li> 
+            <li>Segundo Item</li>
+            <li>Terceiro Item</li> -->
+        </ul>
+        
+    </main>
+
+    <footer>
+    </footer>
+</body>
+
+<script>
+    function adicionarTarefas() {
+        // Cadastrar item na lista
+        // 1 - Preciso ter um valor escrito pelo meu usuário
+            let valorInput = document.getElementById("tarefa").value; 
+            // console.log(valorInput);
+        // 2 - Criar tarefa na lista 
+            let itemLista = document.createElement("li"); //Capacidade de criar outro li na lista (sem valor, temos que dar o valor para ele)
+            itemLista.innerText = valorInput;
+            // Estarei cadastrando um novo item abaixo do anterior
+            document.getElementById("lista_de_tarefas").appendChild(itemLista);
+        // 3 - Botão excluir
+            let botaoExcluir = document.createElement
+            ("button");
+            botaoExcluir.innerText = "Remover item";
+            itemLista.appendChild(botaoExcluir);
+        // 4 - Assim que eu clicar no botao excluir ela ira sumir junto com o item
+            botaoExcluir.onclick = function(){ //onclick: função do botão, faz a função criar "vida"
+                itemLista.remove(); //.remove ele serve para remover algo, o que você deseja deletar, nesse caso queremos deletar um item da lista
+            }
+            document.getElementById("tarefa").value = ""; //document.getElementById: ele visualiza o documento e "pega" o Id que foi solicitado
+            //.value: é um valor vazio, que deve ser preenchido
+
+            // botaoExcluir.onclick = () => {
+            //     itemLista.remove();
+            // }
+    }
+</script>
+</html>

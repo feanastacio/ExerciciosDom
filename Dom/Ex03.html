@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho de Compras</title>
+</head>
+<body>
+    <header>
+    </header>
+    
+    <main>
+        <h1>Camisetas</h1>
+        <ul>
+            <p>Camiseta Preta - R$50,00 <button id="lista_camiseta" onclick="camisap()">Adicionar</button></p>
+            <p>Camiseta branca - R$40,00 <button id="lista_camiseta" onclick="camisab()">Adicionar</button></p>
+        </ul>
+
+        <h1>Carrinho: </h1>
+        <ul id="carrinho">
+
+        </ul>
+        
+    </main>
+
+    <footer>
+    </footer>
+</body>
+
+<script>
+    function camisab() {
+        let itemLista = document.createElement("li");
+        itemLista.innerText = document.getElementsByTagName("p").value; 
+        document.getElementById("carrinho").appendChild(itemLista);
+    }
+    function camisap() {
+        let itemLista = document.createElement("li");
+        document.getElementById("carrinho").appendChild(itemLista);
+    }
+</script>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modo Escuro/Claro</title>
+</head>
+<body>
+    <header></header>
+    <main>
+        <h1>Modo Claro/Escuro</h1>
+        <button onclick="mudar_tema()">Trocar Tema</button> <!-- O nome da função vai ser chamada dentro da tag button, 
+        isso é nescessário para o botão ter uma ação-->
+    </main>
+    <footer></footer>
+</body>
+
+<script>
+    function mudar_tema() { // O nome da função vai ser chamada no onclick do button
+        if (document.body.style.backgroundColor === 'black') { //body porque é a tag onde a função ira agir, 
+        // style pq vamos mexer com o estilo da pagina, backgroundColor porque vamos mexer no fundo da pagina
+        document.body.style.backgroundColor = 'white'; // Se a pagina estiver branca e a fonte preta
+        document.body.style.color = 'black'; // Vai trocar para o preto e a fonte branca
+        } else {
+        document.body.style.backgroundColor = 'black'; // Se a pagina estiver preto e a fonte branca
+        document.body.style.color = 'white'; // Vai mudar para o branco e a fonte preta 
+        }
+    }
+</script>
+</html>
